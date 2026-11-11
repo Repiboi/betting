@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b0e1b">
-  <meta name="description" content="Orbit Arcade is a polished, virtual-credit casino games demo with seven interactive games.">
+  <meta name="description" content="Orbit Arcade is a polished, virtual-credit casino games demo with fourteen interactive games.">
   <title>Orbit Arcade — Play your way</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +37,7 @@
       <div class="sidebar-label">DISCOVER</div>
       <nav class="side-nav" aria-label="Sections">
         <button type="button" class="side-link is-active" data-action="navigate" data-target="home"><svg><use href="#ic-grid"/></svg><span>Overview</span></button>
-        <button type="button" class="side-link" data-action="navigate" data-target="games"><svg><use href="#ic-spark"/></svg><span>All games</span><em>7</em></button>
+        <button type="button" class="side-link" data-action="navigate" data-target="games"><svg><use href="#ic-spark"/></svg><span>All games</span><em>14</em></button>
         <button type="button" class="side-link" data-action="navigate" data-target="history"><svg><use href="#ic-history"/></svg><span>My activity</span></button>
       </nav>
       <div class="sidebar-label sidebar-label--space">ACCOUNT</div>
@@ -52,7 +52,7 @@
           <p>Explore the arcade using free virtual credits. No deposits, no cashouts.</p>
           <button type="button" data-action="wallet">Get demo credits <span>↗</span></button>
         </div>
-        <div class="sidebar-footer"><span class="online-dot"></span> Demo mode <span class="sidebar-version">v2.0</span></div>
+        <div class="sidebar-footer"><span class="online-dot"></span> Demo mode <span class="sidebar-version">v3.0</span></div>
       </div>
     </aside>
     <div class="mobile-scrim" id="mobileScrim" hidden></div>
@@ -77,7 +77,7 @@
           <div class="hero-copy">
             <div class="eyebrow-pill"><span class="eyebrow-star">✦</span> THE NEXT LEVEL OF PLAY</div>
             <h1 id="heroTitle">A little luck.<br><span>A lot of fun.</span></h1>
-            <p>Your all-access pass to seven arcade-style casino games. Pick a game, place a virtual bet, and enjoy the moment.</p>
+            <p>Your all-access pass to fourteen arcade-style casino games. Pick a game, place a virtual bet, and enjoy the moment.</p>
             <div class="hero-actions">
               <button class="button button-primary" type="button" data-action="navigate" data-target="games">Explore games <svg><use href="#ic-arrow"/></svg></button>
               <span class="hero-helper"><span class="online-dot"></span> 100% free-to-play demo</span>
@@ -88,7 +88,7 @@
             <div class="hero-glow"></div>
             <div class="hero-chip chip-back">★</div><div class="hero-chip chip-front"><div class="hero-chip-inside">✦</div></div>
             <div class="visual-badge badge-top">✳ GOOD VIBES ONLY</div>
-            <div class="visual-badge badge-bottom">7 <span>GAMES TO EXPLORE</span></div>
+            <div class="visual-badge badge-bottom">14 <span>GAMES TO EXPLORE</span></div>
             <span class="floating-star star-one">✳</span><span class="floating-star star-two">✦</span>
           </div>
         </section>
@@ -106,7 +106,7 @@
             <div class="searchbox"><svg><use href="#ic-search"/></svg><input id="gameSearch" type="search" placeholder="Search games..." aria-label="Search games"></div>
           </div>
           <div class="filter-row" role="group" aria-label="Filter games">
-            <button type="button" class="filter-pill active" data-filter="all">All games <span>7</span></button>
+            <button type="button" class="filter-pill active" data-filter="all">All games <span>14</span></button>
             <button type="button" class="filter-pill" data-filter="quick">Quick play</button>
             <button type="button" class="filter-pill" data-filter="classic">Classics</button>
             <button type="button" class="filter-pill" data-filter="strategy">Strategy</button>
@@ -121,7 +121,7 @@
               <div class="arena-header"><div class="arena-game-icon" id="arenaIcon">🎯</div><div><h3 id="arenaTitle">Lucky Number</h3><p id="arenaSubtitle">Pick your lucky number between 1 and 5</p></div><span class="arena-tag">LIVE DEMO</span></div>
               <div class="bet-toolbar">
                 <div class="stake-input-wrap"><label for="betAmount">YOUR BET <span>(CR)</span></label><div class="stake-input"><span>◎</span><input id="betAmount" type="number" min="1" step="1" value="25" inputmode="numeric"><span class="stake-suffix">CREDITS</span></div></div>
-                <div class="quick-stakes"><span>QUICK STAKE</span><div><button type="button" data-stake="10">10</button><button type="button" class="selected" data-stake="25">25</button><button type="button" data-stake="50">50</button><button type="button" data-stake="100">100</button></div></div>
+                <div class="quick-stakes"><span>QUICK STAKE</span><div><button type="button" data-stake="10">10</button><button type="button" class="selected" data-stake="25">25</button><button type="button" data-stake="100">100</button><button type="button" data-stake="500">500</button><button type="button" data-stake="max">MAX</button></div></div>
               </div>
               <div id="gameStage" class="game-stage" aria-live="polite"></div>
               <div id="gameResult" class="game-result" role="status" aria-live="polite" hidden></div>
@@ -138,9 +138,9 @@
     </div>
   </div>
 
-  <dialog id="walletDialog" class="app-dialog" aria-labelledby="walletTitle"><div class="dialog-inner"><div class="dialog-head"><span class="dialog-icon">◎</span><button class="dialog-close" type="button" data-action="close-dialog" aria-label="Close wallet"><svg><use href="#ic-x"/></svg></button></div><span class="section-eyebrow">YOUR PLAY MONEY</span><h2 id="walletTitle">Demo wallet</h2><p>Top up with free virtual credits. Nothing here is connected to real money.</p><div class="wallet-large"><small>AVAILABLE CREDITS</small><strong id="dialogBalance">1,000.00 <span>CR</span></strong></div><div class="dialog-actions"><button type="button" class="button button-primary" data-action="topup" data-amount="500">+ 500 credits</button><button type="button" class="button button-secondary" data-action="topup" data-amount="2000">+ 2,000 credits</button></div><button type="button" class="subtle-action" data-action="reset">Reset demo account and history</button></div></dialog>
+  <dialog id="walletDialog" class="app-dialog" aria-labelledby="walletTitle"><div class="dialog-inner"><div class="dialog-head"><span class="dialog-icon">◎</span><button class="dialog-close" type="button" data-action="close-dialog" aria-label="Close wallet"><svg><use href="#ic-x"/></svg></button></div><span class="section-eyebrow">YOUR PLAY MONEY</span><h2 id="walletTitle">Demo wallet</h2><p>Top up with free virtual credits. Nothing here is connected to real money.</p><div class="wallet-large"><small>AVAILABLE CREDITS</small><strong id="dialogBalance">1,000.00 <span>CR</span></strong></div><div class="dialog-actions"><button type="button" class="button button-primary" data-action="topup" data-amount="500">+ 500 credits</button><button type="button" class="button button-secondary" data-action="topup" data-amount="2000">+ 2,000 credits</button><button type="button" class="button button-secondary" data-action="topup" data-amount="10000">+ 10,000 credits</button></div><div class="wallet-custom"><label for="customCredits">CUSTOM FREE DEMO TOP-UP</label><div><input id="customCredits" type="number" min="1" step="1" placeholder="e.g. 25000" inputmode="numeric"><button class="button button-secondary" type="button" data-action="custom-topup">Add credits</button></div></div><button type="button" class="subtle-action" data-action="reset">Reset demo account and history</button></div></dialog>
 
-  <dialog id="limitsDialog" class="app-dialog" aria-labelledby="limitsTitle"><div class="dialog-inner"><div class="dialog-head"><span class="dialog-icon">♡</span><button class="dialog-close" type="button" data-action="close-dialog" aria-label="Close play limits"><svg><use href="#ic-x"/></svg></button></div><span class="section-eyebrow">PLAY YOUR WAY</span><h2 id="limitsTitle">Set your limits</h2><p>Choose a maximum stake per round. Limits apply to every game in this browser.</p><label class="dialog-field" for="limitAmount">MAXIMUM BET (CR)<input id="limitAmount" type="number" min="1" max="1000000" step="1" value="250" inputmode="numeric"></label><button type="button" class="button button-primary dialog-full" data-action="save-limits">Save limit</button><p class="limit-note">This setting is stored locally. If you need a break, simply close the app.</p></div></dialog>
+  <dialog id="limitsDialog" class="app-dialog" aria-labelledby="limitsTitle"><div class="dialog-inner"><div class="dialog-head"><span class="dialog-icon">♡</span><button class="dialog-close" type="button" data-action="close-dialog" aria-label="Close play limits"><svg><use href="#ic-x"/></svg></button></div><span class="section-eyebrow">PLAY YOUR WAY</span><h2 id="limitsTitle">Set your limits</h2><p>There is no preset maximum stake. You can optionally set your own personal cap for this browser.</p><label class="limit-toggle"><input id="unlimitedLimit" type="checkbox" checked> No fixed stake limit (up to available credits)</label><label class="dialog-field" for="limitAmount">OPTIONAL PERSONAL LIMIT (CR)<input id="limitAmount" type="number" min="1" step="1" placeholder="Enter your preferred limit" inputmode="numeric" disabled></label><button type="button" class="button button-primary dialog-full" data-action="save-limits">Save limit</button><p class="limit-note">This setting is stored locally. If you need a break, simply close the app.</p></div></dialog>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 </body>
 </html>

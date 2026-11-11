@@ -15,3 +15,66 @@
 @media(max-width:700px){.main-content{padding:18px 15px}.topbar{padding:15px}.topbar-eyebrow{font-size:8px}.topbar-title{font-size:17px}.topbar-right{gap:9px}.demo-tag,.avatar{display:none}.wallet-chip{min-width:126px;padding:7px;gap:7px}.wallet-symbol{width:27px;height:27px;font-size:21px}.wallet-chip strong{font-size:14px}.wallet-chip small{font-size:7px}.wallet-add{font-size:17px}.hero{grid-template-columns:1fr;min-height:365px}.hero-copy{padding:29px 24px 23px}.hero h1{font-size:44px}.hero p{font-size:11px;max-width:450px}.hero-visual{height:145px;min-height:145px;position:absolute;right:0;bottom:0;width:42%;opacity:.45}.chip-front{top:30px;left:15%;width:145px;height:145px}.hero-chip-inside{height:88px;width:88px;font-size:60px}.chip-back{top:0;left:55%;width:85px;height:85px}.visual-badge{display:none}.hero-actions{flex-wrap:wrap;gap:13px}.hero-helper{font-size:9px}.stats-strip{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0 35px}.section-heading{flex-direction:column;align-items:stretch}.searchbox{max-width:none}.games-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.game-art{height:115px}.game-illustration{font-size:56px}.game-card h3{font-size:13px}.game-card p{font-size:9px}.play-layout{grid-template-columns:1fr}.play-rail{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.play-rail .rail-card{margin-bottom:0}.guide-card{grid-column:1/-1}.rail-card{padding:16px}.game-stage{min-height:250px}.page-footer span:last-child{line-height:1.6}}
 @media(max-width:440px){.hero{min-height:355px}.hero h1{font-size:37px}.hero-visual{width:34%}.stats-strip{gap:8px}.stat{padding:11px 8px}.stat-icon{width:34px;height:34px}.stat small{font-size:9px}.stat strong{font-size:17px}.section-heading h2{font-size:23px}.game-art{height:104px}.arena-card{padding:13px}.arena-header h3{font-size:16px}.arena-tag{font-size:7px;padding:5px}.bet-toolbar{align-items:stretch;flex-wrap:wrap}.stake-input-wrap{width:100%}.quick-stakes{width:100%}.quick-stakes>div{width:100%}.quick-stakes button{flex:1}.option-button{min-width:48px;padding:12px 13px}.option-button--word{min-width:88px}.game-stage{padding:20px 8px}.play-rail{grid-template-columns:1fr}.dialog-actions{flex-direction:column}.page-footer{margin-bottom:12px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* Orbit Arcade v3: sticky navigation and new casino game stages. */
+.topbar{position:sticky;top:0;z-index:16;background:rgba(14,19,36,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 8px 26px #060b162f}
+#games,#play,#history{scroll-margin-top:102px}
+.sidebar{scrollbar-color:#44536e #101627}
+.quick-stakes>div{flex-wrap:wrap;justify-content:flex-end}
+.quick-stakes button[data-stake=max]{background:#28443e;color:#9dffe2;border-color:#508675}
+.game-card--aviator .game-art{background:linear-gradient(130deg,#a63753,#ed677b)}
+.game-card--plinko .game-art{background:linear-gradient(130deg,#a55338,#f4b261)}
+.game-card--hilo .game-art{background:linear-gradient(130deg,#335a7f,#64b9db)}
+.game-card--keno .game-art{background:linear-gradient(130deg,#664da1,#d083e5)}
+.game-card--wheel .game-art{background:linear-gradient(130deg,#9e7d2b,#f5cb65)}
+.game-card--limbo .game-art{background:linear-gradient(130deg,#245f6b,#5edbce)}
+.game-card--scratch .game-art{background:linear-gradient(130deg,#8e386d,#e785bb)}
+.limit-toggle{display:flex;align-items:center;gap:10px;background:#152a2b;border:1px solid #395d55;border-radius:11px;padding:13px;color:#c2fae9;font-size:12px;font-weight:700;margin:16px 0 9px;text-align:left}
+.limit-toggle input{width:17px;height:17px;accent-color:#82f4d5}
+.dialog-field input:disabled{opacity:.45}
+.flight-board{width:min(100%,525px);min-height:260px;background:radial-gradient(circle at 75% 17%,#314e69,#151b35 52%,#111725);position:relative;overflow:hidden;border:1px solid #4b5276;border-radius:17px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:25px 15px 0;isolation:isolate}
+.flight-board:before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 39px,#d6e2ff16 40px),repeating-linear-gradient(90deg,transparent,transparent 39px,#d6e2ff16 40px);pointer-events:none;z-index:-1}
+.flight-stars{font-size:13px;color:#d6e8f48a;letter-spacing:7px}
+.flight-multiplier{font:900 clamp(45px,6.5vw,78px)/1 Outfit,sans-serif;color:#b6fce9;text-shadow:0 0 32px #69dbca55;margin:17px 0 8px;font-variant-numeric:tabular-nums}
+.flight-board.is-flying .flight-multiplier{color:#fff1c3}
+.flight-status{font-size:9px;letter-spacing:1px;font-weight:800;color:#e8b0bb}
+.flight-board.is-flying .flight-status{color:#a1ffdd}
+.flight-path{position:absolute;bottom:15px;width:85%;height:100px;left:7%;border-bottom:2px solid #5b6d8e;border-left:2px solid #5b6d8e;transform:skewY(-6deg)}
+.flight-trail{position:absolute;left:8%;bottom:8px;width:60%;height:3px;transform-origin:left;background:linear-gradient(90deg,#60e8cf11,#f9a6ad);box-shadow:0 0 14px #f9a6ad88;transform:rotate(-19deg)}
+.flight-plane{position:absolute;bottom:35px;left:62%;font-size:47px;color:#ffb3ad;display:block;transform:translate(calc(var(--flight-progress,0) * 54px),calc(var(--flight-progress,0) * -25px)) rotate(-16deg);text-shadow:0 6px 30px #e75972}
+.flight-board.is-flying .flight-plane{animation:plane-wobble 1.2s ease-in-out infinite alternate}
+@keyframes plane-wobble{from{filter:drop-shadow(0 0 3px #ffc5b6)}to{filter:drop-shadow(3px -8px 18px #ffd2ad)}}
+.plinko-board{width:min(100%,460px);padding:14px 10px 9px;border:1px solid #3b4f6d;background:linear-gradient(180deg,#1c3345,#111a2c);border-radius:15px}
+.plinko-pins{height:25px;display:flex;align-items:center;justify-content:center;gap:clamp(13px,3.2vw,26px);color:#b3ffeb;font-size:20px;font-weight:900;line-height:1}
+.plinko-pins:nth-child(2n){color:#db9def}
+.plinko-slots{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:2px;margin-top:13px}
+.plinko-slots span{min-width:0;padding:10px 0;font-size:clamp(8px,1.5vw,11px);font-weight:900;background:#7654a6;border-radius:5px;color:#fff}
+.plinko-slots span:nth-child(3n){background:#357b84}
+.plinko-slots span.hit{background:#f1bd74;color:#172033;box-shadow:0 0 0 2px #fff6}
+.hilo-cards{display:flex;align-items:center;gap:18px;justify-content:center}
+.hilo-card{width:96px;height:126px;background:linear-gradient(140deg,#fff,#d6ebf4);border-radius:12px;border:5px solid #e8efff;display:grid;align-content:center;justify-items:center;gap:5px;box-shadow:0 10px 24px #0005;color:#244a65;font-size:17px;font-weight:800}
+.hilo-card.second{background:linear-gradient(140deg,#e5e9ff,#eeb5d8);color:#7f3161}
+.hilo-card small{font-size:8px;letter-spacing:1px}
+.hilo-card strong{font:900 55px/1 Outfit,sans-serif}
+.hilo-arrow{font-size:31px;color:#97abcc}
+.keno-grid{width:min(100%,350px);display:grid;grid-template-columns:repeat(5,1fr);gap:9px}
+.keno-ball{height:48px;border-radius:12px;color:#d9e7fe;background:#25334d;border:1px solid #4b5b78;font:800 17px Outfit,sans-serif}
+.keno-ball:hover{border-color:#7eedd2}.keno-ball.chosen{color:#13263d;background:#8cf4d8;border-color:#b9ffed}
+.keno-ball.drawn{box-shadow:inset 0 0 0 3px #eeb973;border-color:#eeb973}
+.wheel-zone{position:relative;width:215px;height:215px;display:grid;place-items:center}
+.prize-wheel{width:202px;height:202px;border-radius:50%;border:10px solid #ffd68c;box-shadow:0 0 0 3px #52617e,0 15px 25px #0005;background:conic-gradient(#f29391 0deg 30deg,#5ad5bc 30deg 60deg,#a193ee 60deg 90deg,#f6b55d 90deg 120deg,#f29391 120deg 150deg,#5ad5bc 150deg 180deg,#a193ee 180deg 210deg,#f6b55d 210deg 240deg,#f29391 240deg 270deg,#5ad5bc 270deg 300deg,#a193ee 300deg 330deg,#f6b55d 330deg 360deg);display:grid;place-items:center}
+.wheel-core{border-radius:50%;height:66px;width:66px;background:#1c2541;border:6px solid #fff2c0;display:grid;place-items:center;font-size:38px;color:#ffca80}
+.wheel-pointer{position:absolute;z-index:2;color:#fff6c3;top:-3px;font-size:28px;text-shadow:0 3px 9px #000}
+.limbo-number{font:900 clamp(55px,7vw,95px)/1 Outfit,sans-serif;color:#8cf2d4;min-width:190px;padding:23px 15px;border-radius:17px;background:#1d3140;border:1px solid #426679;box-shadow:inset 0 0 30px #5bafa11b}
+.scratch-slips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.scratch-slip{width:95px;height:95px;border-radius:14px;border:2px dashed #d0a5ed;background:repeating-linear-gradient(135deg,#554366,#554366 9px,#68517a 10px,#68517a 18px);display:grid;place-items:center;font-size:43px;box-shadow:inset 0 0 15px #0005}
+@media(max-width:700px){.topbar{padding:12px 15px}.topbar-left{gap:10px}.quick-stakes>div{justify-content:flex-start}#games,#play,#history{scroll-margin-top:84px}.flight-board{min-height:235px}.hilo-cards{gap:12px}}
+@media(max-width:390px){.quick-stakes button{padding:10px 6px;min-width:41px}.game-stage{gap:13px}.scratch-slip{height:76px;width:76px;font-size:36px}.flight-plane{font-size:38px}.keno-ball{height:43px}}
+
+.flight-board.crashed .flight-multiplier{color:#ff9aa6;text-shadow:0 0 30px #d93957aa}
+.wallet-custom{margin:18px 0;border-top:1px solid #344057;padding-top:15px}
+.wallet-custom label{display:block;font-size:9px;letter-spacing:1px;font-weight:800;color:#a8b6d1;margin:0 0 9px}
+.wallet-custom>div{display:flex;gap:8px}
+.wallet-custom input{width:100%;min-width:0;background:#11192b;border:1px solid #364963;border-radius:9px;color:white;padding:10px 12px;font-size:14px}
+.wallet-custom .button{white-space:nowrap;font-size:12px;padding-inline:14px}
+@media(max-width:440px){.wallet-custom>div{flex-direction:column}}
